@@ -15,11 +15,11 @@
 
 	<name>ImageJ Plugins Batch</name>
 	<description>Batch Processor Plugins for ImageJ</description>
-	<url>N/A</url>
+	<url>https://imagej.net/ImageJ_Plugins_Batch</url>
 	<inceptionYear>2018</inceptionYear>
 	<organization>
-		<name>None</name>
-		<url>N/A</url>
+		<name>ImageJ</name>
+		<url>https://imagej.net/</url>
 	</organization>
 	<licenses>
 		<license>
@@ -57,7 +57,7 @@
 	<mailingLists>
 		<mailingList>
 			<name>Image.sc Forum</name>
-			<archive>http://forum.image.sc/</archive>
+			<archive>https://forum.image.sc/</archive>
 		</mailingList>
 	</mailingLists>
 
@@ -72,11 +72,12 @@
 		<url>https://github.com/imagej/imagej-plugins-batch/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>None</system>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/imagej/imagej-plugins-batch</url>
 	</ciManagement>
 
 	<properties>
-		<package-name>net.imagej</package-name>
+		<package-name>net.imagej.plugins.batch</package-name>
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>Friedrich Miescher Institute for Biomedical Research, Basel (Switzerland)</license.copyrightOwners>
 
