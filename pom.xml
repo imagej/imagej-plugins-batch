@@ -11,7 +11,7 @@
 
 	<groupId>net.imagej</groupId>
 	<artifactId>imagej-plugins-batch</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 
 	<name>ImageJ Plugins Batch</name>
 	<description>Batch Processor Plugins for ImageJ</description>
@@ -64,7 +64,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/imagej/imagej-plugins-batch</connection>
 		<developerConnection>scm:git:git@github.com:imagej/imagej-plugins-batch</developerConnection>
-		<tag>HEAD</tag>
+		<tag>imagej-plugins-batch-0.1.0</tag>
 		<url>https://github.com/imagej/imagej-plugins-batch</url>
 	</scm>
 	<issueManagement>
