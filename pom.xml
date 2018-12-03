@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>23.1.1</version>
+		<version>23.2.0</version>
 		<relativePath />
 	</parent>
 
@@ -83,8 +83,8 @@
 
 		<!-- NB: Deploy releases to the ImageJ Maven repository. -->
 		<releaseProfiles>deploy-to-imagej</releaseProfiles>
-		
-		<batch-processor.version>0.2.0</batch-processor.version>
+
+		<batch-processor.version>0.3.0</batch-processor.version>
 	</properties>
 
 	<repositories>
@@ -98,6 +98,10 @@
 		<dependency>
 			<groupId>org.scijava</groupId>
 			<artifactId>batch-processor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.scijava</groupId>
+			<artifactId>scijava-table</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>net.imagej</groupId>

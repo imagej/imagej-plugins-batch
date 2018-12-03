@@ -40,7 +40,6 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import net.imagej.ImageJService;
-import net.imagej.table.Table;
 
 import org.junit.After;
 import org.junit.Before;
@@ -55,6 +54,7 @@ import org.scijava.module.ModuleItem;
 import org.scijava.module.ModuleService;
 import org.scijava.script.ScriptInfo;
 import org.scijava.service.SciJavaService;
+import org.scijava.table.Table;
 
 public class DatasetBatchInputTest {
 
