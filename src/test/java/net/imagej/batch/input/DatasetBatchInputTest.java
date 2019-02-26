@@ -32,9 +32,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import io.scif.SCIFIOService;
+import io.scif.img.IO;
+import io.scif.img.SCIFIOImgPlus;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -49,6 +55,9 @@ import org.scijava.batch.BatchService;
 import org.scijava.batch.ModuleBatchProcessor;
 import org.scijava.command.CommandInfo;
 import org.scijava.command.CommandService;
+import org.scijava.io.location.FileLocation;
+import org.scijava.io.location.Location;
+import org.scijava.io.location.LocationService;
 import org.scijava.module.Module;
 import org.scijava.module.ModuleItem;
 import org.scijava.module.ModuleService;
@@ -98,11 +107,27 @@ public class DatasetBatchInputTest {
 	}
 	
 	@Test
-	public void testDatasetBatchProcessing() {
-		File[] fileArray = new File[3];
-		fileArray[0] = new File("8bit-signed&pixelType=int8&axes=X,Y&lengths=10,20.fake");
-		fileArray[1] = new File("8bit-signed&pixelType=int8&axes=X,Y&lengths=30,40.fake");
-		fileArray[2] = new File("8bit-signed&pixelType=int8&axes=X,Y&lengths=50,60.fake");
+	public void testDatasetBatchProcessing() throws URISyntaxException, IOException {
+		
+		// create temporary test files
+		final LocationService dhs = context.getService(LocationService.class);
+		final Location[] locations = new Location[3];
+		locations[0] = dhs.resolve("scifioTestImg://8bit-unsigned?pixelType=uint8&axes=X,Y&lengths=10,20");
+		locations[1] = dhs.resolve("scifioTestImg://8bit-unsigned?pixelType=uint8&axes=X,Y&lengths=30,40");
+		locations[2] = dhs.resolve("scifioTestImg://8bit-unsigned?pixelType=uint8&axes=X,Y&lengths=50,60");
+
+		final File baseFile = Files.createTempDirectory("dataset-batchinput-test").toFile();
+		final FileLocation base = new FileLocation(baseFile);
+
+		for (int i = 0; i < locations.length; i++) {
+			final SCIFIOImgPlus<?> img = IO.open(locations[i]).get(0);
+			IO.save(base.child("img-" + i + ".jpeg"), img);
+		}
+
+		final File[] fileArray = new File[3];
+		for (int i = 0; i < fileArray.length; i++) {
+			fileArray[i] = new File(baseFile, "img-" + i + ".jpeg");
+		}
 
 		String script = "" //
 				+ "#@ ImgPlus imgInput\n" //
