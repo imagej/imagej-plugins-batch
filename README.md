@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/imagej/imagej-plugins-batch.svg?branch=master)](https://travis-ci.org/imagej/imagej-plugins-batch)
+[![Build Status](https://github.com/imagej/imagej-plugins-batch/actions/workflows/build-main.yml/badge.svg)](https://github.com/imagej/imagej-plugins-batch/actions/workflows/build-main.yml)
 
 # imagej-plugins-batch
 

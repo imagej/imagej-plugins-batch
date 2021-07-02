@@ -72,8 +72,8 @@
 		<url>https://github.com/imagej/imagej-plugins-batch/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Travis CI</system>
-		<url>https://travis-ci.org/imagej/imagej-plugins-batch</url>
+		<system>GitHub Actions</system>
+		<url>https://github.com/imagej/imagej-plugins-batch/actions</url>
 	</ciManagement>
 
 	<properties>
@@ -82,7 +82,7 @@
 		<license.copyrightOwners>Friedrich Miescher Institute for Biomedical Research, Basel (Switzerland)</license.copyrightOwners>
 
 		<!-- NB: Deploy releases to the SciJava Maven repository. -->
-		<releaseProfiles>deploy-to-scijava</releaseProfiles>
+		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
 
 		<batch-processor.version>0.3.0</batch-processor.version>
 	</properties>
